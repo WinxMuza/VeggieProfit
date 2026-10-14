@@ -29,7 +29,6 @@ na **UPJŠ v Košiciach**.
 - [Dátový model](#dátový-model)
 - [Obrazovky aplikácie](#obrazovky-aplikácie)
 - [Technológie a architektúra](#technológie-a-architektúra)
-- [Plán realizácie](#plán-realizácie)
 - [Autori](#autori)
 
 <a id="cieľ-projektu"></a>
@@ -206,28 +205,6 @@ Dodávky a predaje sa budú ukladať transakčne, aby sa predišlo
 
 Aplikácia bude podporovať **Linux** a spustenie z príkazového riadka.
 Presný postup spustenia bude doplnený po vytvorení funkčnej verzie.
-
-<a id="plán-realizácie"></a>
-## 📋 Plán realizácie
-
-### Základná verzia
-
-- [ ] Návrh databázy a entity
-- [ ] DAO vrstva a databázové testy
-- [ ] Prihlásenie a roly OWNER / SELLER
-- [ ] Správa produktov, kategórií a dodávateľov
-- [ ] Evidencia dodávok
-- [ ] Evidencia predajov a kontrola zásob
-- [ ] Evidencia prevádzkových výdavkov
-- [ ] Výpočet nákupnej hodnoty predaného tovaru a zisku
-- [ ] Dashboard, grafy a porovnanie období
-- [ ] Testy aplikačnej logiky
-- [ ] Overenie spustenia na Linuxe
-
-### Možné rozšírenia
-
-- [ ] Odpisy pokazených alebo poškodených produktov
-- [ ] Export štatistík do CSV
 
 <a id="autori"></a>
 ## 👨‍💻 Autori
