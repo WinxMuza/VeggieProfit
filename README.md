@@ -211,8 +211,6 @@ Presný postup spustenia bude doplnený po vytvorení funkčnej verzie.
 
 | Člen tímu |
 |:---|
-| [Meno a priezvisko] |
-| [Meno a priezvisko] |
+| Volodymyr Mykytenko |
+| Vladyslav Momot |
 
-**Predmet:** Programovanie, algoritmy, zložitosť 1C  
-**Univerzita:** Univerzita Pavla Jozefa Šafárika v Košiciach
