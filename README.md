@@ -120,8 +120,7 @@ výsledky za zvolené obdobie.
 |:---|:---|
 | **Hlavný prehľad** | Základné ukazovatele a upozornenia na nízke zásoby |
 | **Produkty a sklad** | Katalóg, kategórie, ceny, zásoby, vyhľadávanie a filtre |
-| **Dodávatelia** | Správa dodávateľov a kontaktných údajov |
-| **Dodávky** | Zaznamenávanie dodávok a história prijatého tovaru |
+| **Dodávatelia а Dodávky** | Správa dodávateľov a kontaktných údajov, zaznamenávanie dodávok a história prijatého tovaru |
 | **Predaje** | Zostavenie predaja, zadanie hmotnosti a výpočet sumy |
 | **Výdavky** | Evidencia a filtrovanie prevádzkových výdavkov |
 | **Štatistiky** | Výber obdobia, číselné súhrny a tabuľkové prehľady |
