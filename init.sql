@@ -1,5 +1,15 @@
 -- VeggieProfit: evidencia a analytika predajne ovocia a zeleniny
 
+-- ---------- Registacie ----------
+
+CREATE TABLE app_user (
+  id            BIGINT       NOT NULL AUTO_INCREMENT,
+  username      VARCHAR(50)  NOT NULL UNIQUE,
+  password_hash VARCHAR(100) NOT NULL,
+  created_at    DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id)
+);
+
 -- ---------- Číselníky ----------
 
 CREATE TABLE category (
@@ -22,18 +32,6 @@ CREATE TABLE expense_category (
 );
 
 -- ---------- Hlavné entity ----------
-
--- ---------- Registacie ----------
-
-CREATE TABLE app_user (
-  id            BIGINT       NOT NULL AUTO_INCREMENT,
-  username      VARCHAR(50)  NOT NULL UNIQUE,
-  password_hash VARCHAR(100) NOT NULL,
-  created_at    DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (id)
-);
-
--- ------------------------------
 
 CREATE TABLE supplier (
   id      BIGINT       NOT NULL AUTO_INCREMENT,
