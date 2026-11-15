@@ -115,7 +115,6 @@ CREATE TABLE expense (
   FOREIGN KEY (expense_category_id) REFERENCES expense_category (id)
 );
 
--- ---------- Východiskové dáta číselníkov ----------
 
-INSERT INTO category (name) VALUES ('Ovocie'), ('Zelenina');
-INSERT INTO expense_category (name) VALUES ('Nájomné'), ('Doprava'), ('Energie'), ('Iné');
+
+
