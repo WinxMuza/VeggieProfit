@@ -1,4 +1,4 @@
 package sk.upjs.veggieprofit;
 
-public class MainController {
+public enum Factory {
 }

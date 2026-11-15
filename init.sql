@@ -114,7 +114,3 @@ CREATE TABLE expense (
   PRIMARY KEY (id),
   FOREIGN KEY (expense_category_id) REFERENCES expense_category (id)
 );
-
-
-
-
