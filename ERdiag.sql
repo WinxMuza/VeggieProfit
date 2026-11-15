@@ -3,39 +3,60 @@
 -- ---------- Číselníky ----------
 
 CREATE TABLE category (
-  id   BIGINT      NOT NULL AUTO_INCREMENT,
-  name VARCHAR(45) NOT NULL UNIQUE,
-  PRIMARY KEY (id)
+  id      BIGINT      NOT NULL AUTO_INCREMENT,
+  user_id BIGINT      NOT NULL,
+  name    VARCHAR(45) NOT NULL,
+  PRIMARY KEY (id),
+  UNIQUE (user_id, name),
+  FOREIGN KEY (user_id) REFERENCES app_user (id)
 );
 
+
 CREATE TABLE expense_category (
-  id   BIGINT      NOT NULL AUTO_INCREMENT,
-  name VARCHAR(45) NOT NULL UNIQUE,
-  PRIMARY KEY (id)
+  id      BIGINT      NOT NULL AUTO_INCREMENT,
+  user_id BIGINT      NOT NULL,
+  name    VARCHAR(45) NOT NULL,
+  PRIMARY KEY (id),
+  UNIQUE (user_id, name),
+  FOREIGN KEY (user_id) REFERENCES app_user (id)
 );
 
 -- ---------- Hlavné entity ----------
 
-CREATE TABLE supplier (
-  id     BIGINT       NOT NULL AUTO_INCREMENT,
-  name   VARCHAR(80)  NOT NULL,
-  phone  VARCHAR(30),
-  email  VARCHAR(100),
-  active BOOLEAN      NOT NULL DEFAULT TRUE,
+-- ---------- Registacie ----------
+
+CREATE TABLE app_user (
+  id            BIGINT       NOT NULL AUTO_INCREMENT,
+  username      VARCHAR(50)  NOT NULL UNIQUE,
+  password_hash VARCHAR(100) NOT NULL,
+  created_at    DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (id)
+);
+
+-- ------------------------------
+
+CREATE TABLE supplier (
+  id      BIGINT       NOT NULL AUTO_INCREMENT,
+  user_id BIGINT       NOT NULL,
+  name    VARCHAR(80)  NOT NULL,
+  phone   VARCHAR(30),
+  email   VARCHAR(100),
+  active  BOOLEAN      NOT NULL DEFAULT TRUE,
+  PRIMARY KEY (id),
+  FOREIGN KEY (user_id) REFERENCES app_user (id)
 );
 
 CREATE TABLE product (
   id          BIGINT        NOT NULL AUTO_INCREMENT,
-  name        VARCHAR(80)   NOT NULL UNIQUE,
   category_id BIGINT        NOT NULL,
-  unit        VARCHAR(10)   NOT NULL DEFAULT 'kg',
-  sale_price  DECIMAL(10,2) NOT NULL CHECK (sale_price >= 0),   -- predajná cena za kg
+  name        VARCHAR(80)   NOT NULL,
+  sale_price  DECIMAL(10,2) NOT NULL CHECK (sale_price >= 0),
   min_stock   DECIMAL(10,3) NOT NULL DEFAULT 0 CHECK (min_stock >= 0),
-  stock       DECIMAL(10,3) NOT NULL DEFAULT 0 CHECK (stock >= 0),  -- aktuálny stav zásob
-  avg_cost    DECIMAL(10,4) NOT NULL DEFAULT 0 CHECK (avg_cost >= 0), -- vážený priemer nákupnej ceny
+  stock       DECIMAL(10,3) NOT NULL DEFAULT 0 CHECK (stock >= 0),
+  avg_cost    DECIMAL(10,4) NOT NULL DEFAULT 0 CHECK (avg_cost >= 0),
   active      BOOLEAN       NOT NULL DEFAULT TRUE,
   PRIMARY KEY (id),
+  UNIQUE (category_id, name),
   FOREIGN KEY (category_id) REFERENCES category (id)
 );
 
@@ -65,8 +86,10 @@ CREATE TABLE delivery_item (
 
 CREATE TABLE sale (
   id        BIGINT NOT NULL AUTO_INCREMENT,
+  user_id   BIGINT NOT NULL,
   sale_date DATE   NOT NULL,
-  PRIMARY KEY (id)
+  PRIMARY KEY (id),
+  FOREIGN KEY (user_id) REFERENCES app_user (id)
 );
 
 CREATE TABLE sale_item (
@@ -86,8 +109,8 @@ CREATE TABLE sale_item (
 
 CREATE TABLE expense (
   id                  BIGINT        NOT NULL AUTO_INCREMENT,
-  expense_date        DATE          NOT NULL,
   expense_category_id BIGINT        NOT NULL,
+  expense_date        DATE          NOT NULL,
   amount              DECIMAL(10,2) NOT NULL CHECK (amount > 0),
   description         VARCHAR(200),
   PRIMARY KEY (id),
