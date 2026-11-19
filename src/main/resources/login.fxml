@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="450.0" spacing="13.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sk.upjs.veggieprofit.controller.LoginController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" styleClass="title" text="VeggieProfit" textAlignment="CENTER">
+         <VBox.margin>
+            <Insets bottom="27.0" top="35.0" />
+         </VBox.margin>
+      </Label>
+      <TextField fx:id="usernameField" maxWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" promptText="Používateľské meno" />
+      <PasswordField fx:id="passwordField" maxWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" promptText="Heslo">
+         <VBox.margin>
+            <Insets bottom="5.0" />
+         </VBox.margin></PasswordField>
+      <Button defaultButton="true" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onLogin" prefHeight="27.0" prefWidth="130.0" text="Prihlásiť sa">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </Button>
+      <Label fx:id="messageLabel" minHeight="0.0">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin></Label>
+      <Hyperlink onAction="#onOpenRegistration" text="Nemáte účet? Zaregistrujte sa">
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </Hyperlink>
+   </children>
+   <padding>
+      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+   </padding>
+</VBox>

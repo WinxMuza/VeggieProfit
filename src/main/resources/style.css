@@ -1,0 +1,88 @@
+/*Celé okno */
+.root {
+    -fx-background-color: #f5f7f4;
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-font-size: 14px;
+}
+
+/* Bežný text (Label) */
+.label {
+    -fx-text-fill: #2f3e2f;
+}
+
+/* Nadpis */
+.title {
+    -fx-font-family: 'Bahnschrift', 'Segoe UI Semibold', sans-serif;
+    -fx-font-size: 34px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2e7d32;
+}
+
+/* Textové polia */
+.text-field, .password-field {
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-border-color: #c8dcc6;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-padding: 6 12 6 12;
+    -fx-prompt-text-fill: #9aaa98;
+}
+
+/* Pole, do ktorého práve píšeme */
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #4e9f5b;
+    -fx-border-width: 2;
+}
+
+/*Tlačidlá  */
+.button {
+    -fx-background-color: #4e9f5b;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+}
+
+/* Myš nad tlačidlom */
+.button:hover {
+    -fx-background-color: #3e8a4b;
+}
+
+/* Tlačidlo stlačené */
+.button:pressed {
+    -fx-background-color: #33743f;
+}
+
+/* Tlačidlo vybrané klávesnicou (Tab) – bez modrého rámčeka */
+.button:focused {
+    -fx-background-insets: 0;
+}
+
+/*Odkaz*/
+.hyperlink {
+    -fx-text-fill: #2e6b3a;
+    -fx-border-color: transparent;
+    -fx-underline: false;
+}
+
+/* Myš nad odkazom */
+.hyperlink:hover {
+    -fx-underline: true;
+}
+
+/* Odkaz, na ktorý sa už kliklo – rovnaká farba */
+.hyperlink:visited {
+    -fx-text-fill: #2e6b3a;
+}
+
+/* Hlásenia */
+/* Tieto triedy zapína kód (napr. LoginController.showError) */
+.message-error {
+    -fx-text-fill: #2f3e2f;
+}
+
+.message-success {
+    -fx-text-fill: #2f3e2f;
+}
