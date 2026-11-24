@@ -12,7 +12,7 @@ public class App extends Application {
         FXMLLoader loader = new FXMLLoader(App.class.getResource("/login.fxml"));
         Scene scene = new Scene(loader.load());
 
-        stage.setTitle("VeggieProfit Login");
+        stage.setTitle("VeggieProfit");
         stage.setScene(scene);
         stage.show();
     }

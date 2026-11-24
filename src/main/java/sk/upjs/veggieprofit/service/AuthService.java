@@ -30,7 +30,7 @@ public class AuthService {
     public void login(String username, String password){
         User user = userDao.findByUsername(username);
         if(user == null || !BCrypt.checkpw(password, user.passwordHash())){
-            throw new IllegalArgumentException("Nespravvne meno alebo heslo!");
+            throw new IllegalArgumentException("Nespravne meno alebo heslo!");
         }
         Session.INSTANCE.setCurrentUser(user);
     }

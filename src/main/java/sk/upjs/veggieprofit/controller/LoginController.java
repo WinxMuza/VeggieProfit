@@ -34,7 +34,7 @@ public class LoginController {
         catch (IllegalArgumentException e){
             showError(e.getMessage());
         }
-        catch (Exception e){
+        catch (Exception e) {
             showError("Chyba: " + e.getMessage());
         }
     }
